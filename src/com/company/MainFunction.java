@@ -11,7 +11,7 @@ public class MainFunction {
 
     void mainMenu() throws IOException,ClassNotFoundException{
         try {
-            System.out.println(" \n (1) --> For search \n (2) --> For Registration\n (4) --> For Exit \n Enter Your Choice :");
+            System.out.println(" \n(1) --> For search \n(2) --> For Registration\n(3) --> For Delete All the Records\n(4) --> For Exit \nEnter Your Choice :");
             byte choice = in.nextByte();
             switch (choice) {
                 case 1:
@@ -33,6 +33,9 @@ public class MainFunction {
                     register.register();
                     break;
                 case 3:
+                    register.deleteAllDetails();
+                    break;
+                case 4:
                     key = false;
                     System.err.println("---------Thanks for coming----------");
                     break;

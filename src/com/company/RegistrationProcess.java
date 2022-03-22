@@ -99,6 +99,23 @@ public class RegistrationProcess  {
         fileInputStream.close();
         objectInputStream.close();
     }
+    void deleteAllDetails() throws IOException{
+        System.out.println("Enter your password :");
+        String password=in.nextLine();
+        if(password.equalsIgnoreCase("Sriram")) {
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\sys\\Desktop\\File\\Registration.txt");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            ArrayList<Details> array = new ArrayList<>();
+            objectOutputStream.writeObject(array);
+
+            objectOutputStream.flush();
+            fileOutputStream.close();
+            objectOutputStream.close();
+        }
+        else{
+            System.err.println("\n-----Wrong password-----\n");
+        }
+    }
     boolean alreadyExists(String number) throws IOException,ClassNotFoundException{
         boolean flag=false;
         FileInputStream fileInputStream = new FileInputStream("C:\\Users\\sys\\Desktop\\File\\Registration.txt");
